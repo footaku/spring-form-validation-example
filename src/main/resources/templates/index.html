@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" th:action="@{/}" action="http://google.co.jp">
+        <ul>
+            <li>
+                <div th:if="${#fields.hasErrors('form.name')}" th:errors="${form.name}">Name Error</div>
+                <input type="text" name="name" id="name" th:value="${form.name}"/>
+            </li>
+            <li>
+                <input type="submit" name="post" id="post"/>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
